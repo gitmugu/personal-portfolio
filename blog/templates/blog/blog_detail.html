@@ -1,0 +1,19 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+
+
+<div class="contaner text-center">
+	
+	<br>
+		<a href="{% url 'landing' %}">Home</a>
+	<br>
+
+	<br>
+		<a href="{% url 'blog:all_blogs' %}">Blogs</a>
+	<br>
+{{ blog.title }}
+
+</div>
+
+{% endblock %}

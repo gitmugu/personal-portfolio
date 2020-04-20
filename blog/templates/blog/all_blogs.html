@@ -1,0 +1,21 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+
+<div class="contaner text-center">
+	
+	<br>
+		<a href="{% url 'landing' %}">Home</a>
+	<br>
+
+	<h1>Here are the latest Blogs, there are {{ blogdatas.count }} blog{{ blogdatas.count|pluralize }} in total</h1>
+
+	{% for blogdata in blogdatas %}
+	<a href="{% url 'blog:blog_detail' blogdata.id %}">{{ blogdata.title}}</a>
+	<h5>{{ blogdata.date }}</h5>
+	<p>{{ blogdata.description }}</p>
+
+	{% endfor %}
+</div>
+
+{% endblock %}
